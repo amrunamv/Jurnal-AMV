@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /oai
+Disallow: /console
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+Disallow: /livewire/
+
+Sitemap: http://127.0.0.1:8000/sitemap.xml

@@ -1,0 +1,6 @@
+Role	Email	Password
+Super Admin	superadmin@amvsd.id	@Amrunkhakim11
+Editor	editor@amvsd.id	@Amrunkhakim11
+Reviewer	reviewer@amvsd.id	@Amrunkhakim11
+Author	author@amvsd.id	@Amrunkhakim11
+Reader	reader@amvsd.id	@Amrunkhakim11

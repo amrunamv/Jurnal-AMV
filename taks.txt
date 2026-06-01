@@ -1,0 +1,56 @@
+Implementation Plan - AMV Open Science
+This plan outlines the steps to build a premium Scientific Journal Management System using Laravel 11, Livewire 3, and FilamentPHP v3.
+
+User Review Required
+IMPORTANT
+
+The project mentions SINTA 1, DOAJ, and Scopus compliance. This requires specific metadata standards (OAI-PMH, Highwire Press, Dublin Core) which are included in this plan. Crossref and ORCID integrations will require API credentials from the user.
+
+Proposed Changes
+Core System & Foundation
+[NEW] Initialize Laravel 11 project in the root directory.
+[NEW] Install FilamentPHP v3 for the administrative interface.
+[NEW] Install Spatie Laravel-Permission for role-based access control (Super Admin, Editor, Reviewer, Author, Reader).
+Database Schema (ERD)
+[NEW] journals: Basic journal information.
+[NEW] manuscripts: Research articles (UUID, Slug, Status, JSON Metadata for Dublin Core).
+[NEW] contributors: Multi-author support with ordering and roles (Main, Co-author).
+[NEW] author_affiliations: Institution data for accreditation tracking.
+[NEW] plagiarism_reports: Storage for similarity scores and certificate links.
+[NEW] manuscript_revisions: Tracking submission versions with Metadata Snapshots (Title/Abstract).
+[NEW] reviews: Double-blind review records.
+[NEW] crossref_logs: Tracking DOI registration batches and status.
+[NEW] citations: Extracted and parsed references.
+[NEW] activity_logs: Audit trail for all status transitions.
+Workflow Implementation
+[NEW] Manuscript Workflow Service: Logic to handle transitions: Submission -> Editor Assignment -> Review -> Revision -> Copyediting -> Production -> Published.
+[NEW] Conflict of Interest Checker: Logic to prevent assigning reviewers from the same institution as authors.
+[NEW] Queue Management: Redis-backed queues for email notifications (Submission Ack, Review Requests) to prevent UI blocking.
+[NEW] Anonymous Reviewer Assignment: Service to suggest/assign reviewers without exposing identities.
+Interoperability & SEO
+[NEW] OaiPmhController: Exposing XML metadata in Dublin Core format.
+[NEW] Dynamic Sitemap & RSS: Auto-updating XML sitemap and RSS feeds for indexers.
+[NEW] SEO Service: Dynamic generation of Highwire Press meta tags and JSON-LD schema.
+[NEW] Crossref Integration: Service to register/update DOIs.
+UI/UX & Performance
+[NEW] Reviewer Interface: Custom Filament Page (Minimalist) - PDF, Rubric, Recommendation only. No dashboard clutter.
+[NEW] Public Landing Page: Modern, Tailwind-based discovery interface using wire:navigate for SPA-like feel.
+[NEW] Media Handling: Spatie Media Library integrated with S3 for offloading PDFs and images.
+[NEW] Response Caching: spatie/laravel-responsecache for public article pages.
+[NEW] Article View: Including citation tools and dynamic metrics.
+Optimization & Security
+[NEW] Rate Limiting: Protect OAI-PMH endpoints from aggressive scraping.
+[NEW] Sentry Integration: Real-time error monitoring.
+[NEW] Secure File Access: Middleware to ensure manuscript files are not publicly accessible via direct URL.
+Verification Plan
+Automated Tests
+Feature tests for manuscript state transitions and Conflict of Interest logic.
+Unit tests for OAI-PMH XML, Sitemap, and RSS generation.
+Spatie role-based access control tests.
+Performance benchmark tests (Google Lighthouse).
+Manual Verification
+Verify OAI-PMH XML output against a validator.
+Simulate the double-blind review process including email queuing.
+Check SEO meta tags and Rich Snippets.
+Security audit of file access permissions.
+Verify "Live" feel with wire:navigate.

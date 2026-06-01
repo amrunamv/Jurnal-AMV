@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Filament Custom Theme: AMV Open Science "The Research Lab" */
+
+:root {
+    --primary-rgb: 59, 130, 246; /* Primary 500 */
+    --navy-900: #0f172a;
+    --navy-950: #020617;
+}
+
+/* Global Font & Smoothness */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sidebar: Deep Navy Research Environment */
+.fi-sidebar {
+    background-color: var(--navy-950) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.fi-sidebar-header {
+    @apply border-b border-white/5 mb-4 !important;
+}
+
+.fi-sidebar-nav {
+    @apply px-4 !important;
+}
+
+/* Sidebar Navigation Items */
+.fi-sidebar-item-button {
+    @apply rounded-xl transition-all duration-300 border border-transparent !important;
+}
+
+.fi-sidebar-item-button:hover {
+    @apply bg-white/5 border-white/10 !important;
+}
+
+.fi-sidebar-item-active {
+    @apply bg-primary-500/10 border-primary-500/20 text-primary-500 !important;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-label {
+    @apply font-black tracking-tight !important;
+}
+
+.fi-sidebar-item-icon {
+    @apply grayscale opacity-60 transition-all duration-300 !important;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-icon {
+    @apply grayscale-0 opacity-100 text-primary-500 !important;
+}
+
+/* Sidebar Labels */
+.fi-sidebar-group-label {
+    @apply text-slate-500 font-black tracking-[3px] text-[9px] uppercase mt-8 mb-4 px-2 !important;
+}
+
+/* Main Content Area: High Contrast Laboratory */
+.fi-main {
+    @apply bg-slate-50 !important;
+}
+
+.fi-header-heading {
+    @apply text-3xl font-black text-slate-900 tracking-tighter !important;
+}
+
+/* Cards & Sections: The Bento Look */
+.fi-section, .fi-ta-ctn {
+    @apply rounded-[2rem] border-none shadow-soft overflow-hidden bg-white px-2 !important;
+}
+
+.fi-section-header {
+    @apply border-b border-slate-50 !important;
+}
+
+/* Topbar: Glassmorphism */
+.fi-topbar {
+    @apply bg-white/70 backdrop-blur-xl border-b border-slate-100 !important;
+}
+
+/* Table Enhancements */
+.fi-ta-header-cell {
+    @apply text-[10px] font-black uppercase tracking-widest text-slate-400 py-6 !important;
+}
+
+.fi-ta-row {
+    @apply transition-colors duration-200 !important;
+}
+
+.fi-ta-row:hover {
+    @apply bg-slate-50/50 !important;
+}
+
+/* Buttons: Premium Feel */
+.fi-btn {
+    @apply rounded-xl font-black uppercase tracking-widest text-[10px] py-3 px-6 transition-all duration-300 !important;
+}
+
+.fi-btn-color-primary {
+    @apply shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 !important;
+}
+
+/* Dark Mode Overrides */
+.dark .fi-sidebar {
+    @apply bg-black !important;
+}
+
+.dark .fi-main {
+    @apply bg-navy-950 !important;
+}
+
+.dark .fi-section, .dark .fi-ta-ctn {
+    @apply bg-navy-900/50 border border-white/5 !important;
+}
