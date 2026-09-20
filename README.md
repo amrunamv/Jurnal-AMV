@@ -1,68 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AMV Open Science (Jurnal-AMV)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**AMV Open Science (Jurnal-AMV)** adalah sistem manajemen dan penerbitan jurnal ilmiah (Journal Management System) berbasis *open-source* yang dibangun menggunakan framework modern [Laravel](https://laravel.com/). 
 
-## About Laravel
+Proyek ini dibuat dengan tujuan untuk menyediakan alternatif sistem jurnal yang lebih modern, ringan, responsif, dan mudah dikembangkan dibandingkan platform yang sudah ada seperti Open Journal Systems (OJS).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Visi & Misi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Kami ingin menjadikan proyek ini sebagai standar baru untuk platform publikasi ilmiah di Indonesia dan global. Fokus utama kami adalah UI/UX yang ramah pengguna (baik bagi *Author*, *Reviewer*, maupun *Editor*), serta kemudahan kustomisasi bagi para *Developer*.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Rencana Fitur
+- **User Management**: Peran khusus untuk Admin, Journal Manager, Editor, Reviewer, dan Author.
+- **Workflow Publikasi**: Sistem *submission* (pengiriman naskah), *peer-review*, penyuntingan (*copyediting*), hingga publikasi.
+- **Modern UI/UX**: Tampilan responsif dan intuitif dengan dukungan Tailwind CSS.
+- **OAI-PMH Support**: Integrasi untuk indeksasi jurnal internasional (seperti DOAJ, Google Scholar, dll).
+- **Export & Import**: Kemudahan ekspor data artikel dan meta-data.
 
-## Learning Laravel
+## 🛠️ Stack Teknologi
+- **Backend:** [Laravel](https://laravel.com/) (PHP)
+- **Frontend:** [Tailwind CSS](https://tailwindcss.com/), [Vite](https://vitejs.dev/)
+- **Database:** MySQL / PostgreSQL / SQLite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 💻 Panduan Instalasi untuk Developer
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Jika Anda ingin mencoba atau berkontribusi, ikuti langkah-langkah instalasi berikut:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone repositori ini:**
+   ```bash
+   git clone https://github.com/amrunamv/Jurnal-AMV.git
+   cd "Jurnal-AMV"
+   ```
 
-## Laravel Sponsors
+2. **Install dependensi PHP (Composer):**
+   ```bash
+   composer install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Install dependensi Node.js (NPM):**
+   ```bash
+   npm install
+   ```
 
-### Premium Partners
+4. **Konfigurasi Environment:**
+   Salin file `.env.example` menjadi `.env` lalu sesuaikan konfigurasi database Anda.
+   ```bash
+   cp .env.example .env
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5. **Generate Application Key:**
+   ```bash
+   php artisan key:generate
+   ```
 
-## Contributing
+6. **Migrasi Database:**
+   ```bash
+   php artisan migrate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7. **Jalankan *Development Server*:**
+   Jalankan server PHP dan *build tool* frontend:
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
+   Aplikasi dapat diakses melalui `http://localhost:8000`.
 
-## Code of Conduct
+## 🤝 Mari Berkontribusi!
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Proyek ini sangat membutuhkan bantuan dan ide dari **Anda**! Kami mengundang seluruh *developer*, *UI/UX designer*, penulis, dan akademisi untuk ikut serta mengembangkan sistem jurnal ini agar sekelas OJS namun dengan teknologi kekinian.
 
-## Security Vulnerabilities
+Tidak peduli apakah Anda pemula atau profesional, setiap kontribusi sekecil apa pun (perbaikan *bug*, penambahan fitur, peningkatan dokumentasi, atau desain) akan sangat dihargai.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Silakan baca panduan lengkap cara berkontribusi di file [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## License
+## 🐛 Pelaporan Bug & Request Fitur
+Menemukan *bug* atau punya ide fitur yang keren? Jangan ragu untuk membuat [Issue baru](https://github.com/amrunamv/Jurnal-AMV/issues) di repositori ini.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📄 Lisensi
 
-# Jurnal-AMV
+AMV Open Science (Jurnal-AMV) adalah perangkat lunak *open-source* yang dilisensikan di bawah [MIT License](LICENSE).
